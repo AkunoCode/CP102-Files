@@ -1,3 +1,6 @@
+# John Leo D. Echevaria (A22-34233)
+# CP102 - M001
+
 import os
 import re
 
