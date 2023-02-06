@@ -4,6 +4,7 @@
 import os
 import re
 import datetime
+import win32com.client
 from time import sleep as pause
 
 class Events:
@@ -48,12 +49,8 @@ class Events:
         email_pattern = re.compile(r'[\w.]+@\w+\.[a-zA-Z]{2,4}') # echevaria@example.com
         phone_pattern = re.compile(r'((\+63)[ -]?(\d{3})[ -]?(\d{3})[ -]?(\d{4}))|(09\d{9})') # +63-929-812-5470 or 09298125470
         return (self.find(email_pattern),self.find(phone_pattern))
-    
-    def find(self, pattern):
-        """Match the text with the given pattern, returns the match else returns "Not Found\""""
-        match = pattern.search(self.text)
-        return match.group() if match else "Not Found"
 
+    @property
     def summary(self):
         """Returns a Summary Dictionary of the properties of the Event Object"""
         event_dict = {
@@ -62,34 +59,45 @@ class Events:
             "Event Time": self.eventDate[1],
             "Event Location": self.eventLocation,
             "Sender Email": self.eventSender[0],
-            "Sender Phone": self.eventSender[1]
+            "Sender Phone": self.eventSender[1],
+            "Event Body" : self.text
         }
         return event_dict
+    
+    def find(self, pattern):
+        """Match the text with the given pattern, returns the match else returns "Not Found\""""
+        match = pattern.search(self.text)
+        return match.group() if match else "Not Found"
 
     def write_file(self, summary):
-        """Prompts the user if they want to save the summary on a txt file"""
-        while True:
-            save = input("Save summary to a text file? (yes/no): ").lower()
-            if save in ["yes","no"]:
-                if save == "yes":
-                    with open("Invitations_Summary.txt","w") as file:
-                        file.write(summary)
-                    print("File saved as 'Invitations_Summary.txt'")
-                break
-            else:
-                print("Please answer 'yes' or 'no'")
+        """Save the string summary of the invitations in a txt file"""
+        with open("Invitations_Summary.txt","w") as file:
+            file.write(summary)
+        print("File saved as 'Invitations_Summary.txt'")
 
+    def create_schedule(self, event):
+        """Creates a schedule in outlook using the win32com.client"""
+        outlook = win32com.client.Dispatch("Outlook.Application") # Creates an instance of Microsoft outlook
+        appointment = outlook.CreateItem(1) # argument "1" means we are creating an appointment
+        appointment.Subject = event["Event Name"]
+        appointment.Start = event["Event Date"].strftime("%Y-%m-%d")
+        appointment.Location = event["Event Location"]
+        appointment.Body = event["Event Body"]
+        appointment.ReminderSet = True
+        appointment.ReminderMinutesBeforeStart = 15
+        appointment.Save()
 
 def main():
-    folder_path = input("\nThis program is set to read on the text files located in the Invitation folder.\n\nWould you like to update the folder name?\nIf yes, please type the folder name containing text files or type \"no\": ").lower()
-    if folder_path == "no":
-        start() # Calls the start function with default arguments
-    elif os.path.exists(os.path.abspath(folder_path)):
-        start(folder_path) # Calls the start function with the folder_path as an argument
-    else:
-        print("\nNo such folder found in the directory.\nPlease make sure you are providing the correct folder name and place the folder in the same directory as the code to avoid errors.")
-        main() # prints an error and starts the main function all over
-
+    while True:
+        folder_path = input("\nThis program is set to read on the text files located in the Invitation folder.\n\nWould you like to update the folder name?\nIf yes, please type the folder name containing text files or type \"no\": ").lower()
+        if folder_path == "no":
+            start() # Calls the start function with default arguments
+            break
+        elif os.path.exists(os.path.abspath(folder_path)):
+            start(folder_path) # Calls the start function with the folder_path as an argument
+            break
+        else:
+            print("\nNo such folder found in the directory.\nPlease make sure you are providing the correct folder name and place the folder in the same directory as the code to avoid errors.")
 
 def start(folder_path="Invitations"):
     abs_folder_path = os.path.abspath(folder_path) # Creates absolute path from the provided relative path
@@ -108,7 +116,7 @@ def start(folder_path="Invitations"):
                 with open(file_path, "r") as file: # opens file in read mode only
                     text = file.read()
                     event = Events(text) # Creates an event object
-                    event_list.append(event.summary()) # Adds the summary of the event object to the list
+                    event_list.append(event.summary) # Adds the summary of the event object to the list
     
     except FileNotFoundError:
         print("Folder not found in the directory.\nPlease make sure that the folder containing the text files is located inside the same directory as the program.\nThen run the program inside the directory")
@@ -118,12 +126,26 @@ def start(folder_path="Invitations"):
     event_str = ""
     for i in event_list:
         for k,v in i.items():
-            event_str += f"{k}: {v}\n"
+            if k == "Event Body":
+                continue
+            else:
+                event_str += f"{k}: {v}\n"
         event_str += "\n"
     print(event_str)
     pause(1)
     
-    event.write_file(event_str)
+    while True:
+        save_write = input("Would you like to schedule the events in your calendar or just save it as a text file? (\"schedule\"/\"save\"): ")
+        if save_write == "save":
+            event.write_file(event_str)
+            break
+        elif save_write == "schedule":
+            for i in event_list:
+                event.create_schedule(i)
+            print("Events saved in your Outlook calendar.")
+            break
+        else:
+            print("Please type either \"schedule\" or \"save\".")
     pause(3)
 
     print("\nThank you!\nJohn Leo D. Echevaria (A22-34233)")
