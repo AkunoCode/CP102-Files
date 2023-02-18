@@ -3,13 +3,13 @@
 
 class Employee:
     # Employee constructor with private attributes
-    def __init__(self):
-        self.__Name = ""
-        self.__Gender = ''
-        self.__Bdate = ""
-        self.__Position = ""
-        self.__Rate = 0
-        self.__Dayswork = 0
+    def __init__(self, name, gender, bdate, position, rate, dayswork):
+        self.__Name = name
+        self.__Gender = gender
+        self.__Bdate = bdate
+        self.__Position = position
+        self.__Rate = rate
+        self.__Dayswork = dayswork
 
     # Setters
     def setName(self,name):

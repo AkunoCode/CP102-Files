@@ -1,0 +1,223 @@
+Game name: Grand Theft Auto 5
+Genre: Action-adventure
+Price: P1,999.00
+
+Game name: Grand Theft Auto 4
+Genre: Action-adventure
+Price: P799.00
+
+Game name: Grand Theft Auto 3
+Genre: Action-adventure
+Price: P500.00
+
+Game name: Grand Theft Auto - Vice City
+Genre: Action-adventure
+Price: P500.00
+
+Game name: Grand Theft Auto - San Andreas
+Genre: Action-adventure
+Price: P500.00
+
+Game name: Grand Theft Auto - Vice City Stories
+Genre: Action-adventure
+Price: P450.00
+
+Game name: Grand Theft Auto - Liberty City Stories
+Genre: Action-adventure
+Price: P450.00
+
+Game name: Grand Theft Auto - Chinatown Wars
+Genre: Action-adventure
+Price: P450.00
+
+Game name: Minecraft
+Genre: Sandbox
+Price: P1,199.00
+
+Game name: The Witcher 3: Wild Hunt
+Genre: Action role-playing game
+Price: P1,799.75
+
+Game name: Dota 2
+Genre: Multiplayer online battle arena
+Price: Free to play
+
+Game name: Counter-Strike: Global Offensive
+Genre: First-person shooter
+Price: Free to play
+
+Game name: Tom Clancy's Rainbow Six Siege
+Genre: Tactical shooter
+Price: P799.00
+
+Game name: Call of Duty: Modern Warfare
+Genre: First-person shooter
+Price: P2,999.00
+
+Game name: Among Us
+Genre: Party game
+Price: Free to play
+
+Game name: Valorant
+Genre: First-person shooter
+Price: Free to play
+
+Game name: Fortnite
+Genre: Battle royale
+Price: Free to play
+
+Game name: The Elder Scrolls V: Skyrim
+Genre: Action role-playing game
+Price: P699.75
+
+Game name: Apex Legends
+Genre: Battle royale
+Price: Free to play
+
+Game name: Red Dead Redemption 2
+Genre: Action-adventure
+Price: P2,499.75
+
+Game name: PlayerUnknown's Battlegrounds (PUBG)
+Genre: Battle royale
+Price: P459.00
+
+Game name: Rocket League
+Genre: Sports
+Price: Free to play
+
+Game name: Counter-Strike: Source
+Genre: First-person shooter
+Price: P489.95
+
+Game name: Stardew Valley
+Genre: Simulation
+Price: P419.00
+
+Game name: Terraria
+Genre: Action-adventure
+Price: P419.00
+
+Game name: World of Warcraft
+Genre: Massively multiplayer online role-playing game
+Price: Free to play
+
+Game name: Half-Life 2
+Genre: First-person shooter
+Price: P379.95
+
+Game name: Age of Empires II: Definitive Edition
+Genre: Real-time strategy
+Price: P719.95
+
+Game name: Team Fortress 2
+Genre: First-person shooter
+Price: Free to play
+
+Game name: Left 4 Dead 2
+Genre: First-person shooter
+Price: P499.95
+
+Game name: Dead by Daylight
+Genre: Survival horror
+Price: P779.00
+
+Game name: Portal 2
+Genre: Puzzle-platform
+Price: P459.95
+
+Game name: Euro Truck Simulator 2
+Genre: Simulation
+Price: P699.95
+
+Game name: Fall Guys: Ultimate Knockout
+Genre: Party game
+Price: P459.95
+
+Game name: Destiny 2
+Genre: First-person shooter
+Price: Free to play
+
+Game name: Terraria
+Genre: Action-adventure
+Price: P419.00
+
+Game name: ARK: Survival Evolved
+Genre: Action-adventure
+Price: P1,279.00
+
+Game name: Warframe
+Genre: Third-person shooter
+Price: Free to play
+
+Game name: Civilization VI
+Genre: Turn-based strategy
+Price: P1,379.00
+
+Game name: Rust
+Genre: Survival
+Price: P1,199.75
+
+Game name: The Sims 4
+Genre: Life simulation
+Price: P1,299.00
+
+Game name: Starcraft II
+Genre: Real-time strategy
+Price: P500.00
+
+Game name: Genshin Impact
+Genre: RPG
+Price: Free to play
+
+Game name: God of War
+Genre: Open-World
+Price: P2,490.00
+
+Game name: Hogwarts Legacy
+Genre: Open-World
+Price: P2,500.00
+Game name: Subnautica
+Genre: Open-World, RPG
+Price: P1,999.00
+
+Game name: God of War - Chains of Olympus
+Genre: RPG
+Price: P1,000.00
+
+Game name: God of War - Chains
+Genre: RPG
+Price: P1,999.00
+
+Game name: haha
+Genre: haha
+Price: haha
+
+Game name: GOD
+Genre: RPG
+Price: 1000
+
+Game name: GAGA
+Genre: GAGA
+Price: GAGA
+
+Game name: GAGA
+Genre: GAGA
+Price: GAGA
+
+Game name: gaga
+Genre: gaga
+Price: haga
+
+Game name: test
+Genre: test
+Price: 10
+
+Game name: hello?
+Genre: test
+Price: 2
+
+Game name: Ian
+Genre: Music
+Price: 143
+
