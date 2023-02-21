@@ -46,11 +46,29 @@ def save_game(game_name, game_genre, game_price):
 def search_game():
      while True:
         matches = []
-        where = input("\nEnter game name: ")
-        for game in gamelist:
-            if re.search(where, game.get_name(), re.IGNORECASE):
-                matches.append(game)
+        print("Search by:")
+        print("[1] Name")
+        print("[2] Price Range")
+        where = input("\nEnter search method: ")
+        if where == "1":
+            name = input("\nEnter game name: ")
+            for game in gamelist:
+                if re.search(name, game.get_name(), re.IGNORECASE):
+                    matches.append(game)
+        elif where == "2":
+            price = int(input("\nEnter the maximum price range: "))
+            for game in gamelist:
+                game_price = game.get_price().replace(",","")
+                game_price = game_price.replace("P","")
+                if "free" in game.get_price().lower():
+                    matches.append(game)
+                elif float(game_price) <= price:
+                    matches.append(game)
+        else:
+            print("Please choose among the choices")
+            continue
         if len(matches) > 0:
+            print("Match(es) found:")
             for game in matches:
                 print(f"Game: {game.get_name()}")
                 print(f"Genre: {game.get_genre()}")

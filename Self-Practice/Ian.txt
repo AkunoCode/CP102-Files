@@ -188,36 +188,3 @@ Price: P1,000.00
 Game name: God of War - Chains
 Genre: RPG
 Price: P1,999.00
-
-Game name: haha
-Genre: haha
-Price: haha
-
-Game name: GOD
-Genre: RPG
-Price: 1000
-
-Game name: GAGA
-Genre: GAGA
-Price: GAGA
-
-Game name: GAGA
-Genre: GAGA
-Price: GAGA
-
-Game name: gaga
-Genre: gaga
-Price: haga
-
-Game name: test
-Genre: test
-Price: 10
-
-Game name: hello?
-Genre: test
-Price: 2
-
-Game name: Ian
-Genre: Music
-Price: 143
-

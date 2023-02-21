@@ -9,11 +9,11 @@ class VanRental:
         self.returned_at = None
         self.paid = False
     
-    def calculate_price(self, rate_per_hour):
+    def calculate_price(self):
         if not self.returned_at: # If hindi pa sinasauli, wala pang babayadan
             return None
         time_difference = (self.returned_at - self.rented_at).total_seconds() / 3600 # Calculate kung ilang oras inarkila
-        price = rate_per_hour * time_difference # Calculate yung payment per hour
+        price = 200 * time_difference # Calculate yung payment per hour
         return price
     
     def return_van(self):
