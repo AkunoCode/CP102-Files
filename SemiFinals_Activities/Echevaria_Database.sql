@@ -55,3 +55,9 @@ CREATE TABLE Enrollment(
     FOREIGN KEY (StudentNo) REFERENCES Student(StudentNo),
     FOREIGN KEY (SectionCode, SchoolYear, Semester) REFERENCES Section(SectionCode, SchoolYear, Semester)
 );
+
+CREATE TABLE Subject(
+    SubjCode VARCHAR(10) PRIMARY KEY,
+    SubjName VARCHAR(255) NOT NULL,
+    Units FLOAT
+);
